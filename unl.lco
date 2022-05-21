@@ -46,14 +46,9 @@
   \begin{textblock*}{2in}[0.530,0.912](4.885in,1.185in)
     \includegraphics[height=0.75in]{Nebraska_N_4c}
   \end{textblock*}
-  % \begin{center}
-  %   \includegraphics[width=0.25\linewidth]{Nebraska_N_4c}
-  % \end{center}
 }
-% \KOMAoptions{fromlogo}
 
 % Define first page footer
-
 \KOMAoptions{firstfoot}
 \usepackage[absolute]{textpos}
 \setkomavar{firstfoot}{
