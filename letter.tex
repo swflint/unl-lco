@@ -1,0 +1,46 @@
+\documentclass[unl]{scrlttr2}
+
+\usepackage{csquotes}
+\usepackage{lipsum}
+
+\setkomavar{fromname}{Your Name}
+\setkomavar{fromtitle}{Your Title}
+\setkomavar{fromemail}{\url{email@unl.edu}}
+% \setkomavar{signaturefile}{\includegraphics{signature}} % Set if you
+% have a signature image
+\setkomavar{fromdepartment}{Your Department}
+\setkomavar{fromphone}{402.472.XXXX}
+\setkomavar{fromoffice}{Department Office}
+\setkomavar{fromurl}{\url{Departmental URL}}
+
+% Adds from address right above to address (Comment if not wanted)
+\KOMAoptions{addrfield=true,backaddress=true}
+
+% Set the date here
+\def\datedAs{\printdate{2022-05-31}}
+\date{\datedAs}
+
+\begin{document}
+\begin{letter}{Addressee\\Address}
+
+  \setkomavar{date}{\datedAs}
+  \setkomavar{subject}{Test}
+
+  \opening{Dear Addressee:}
+
+  \lipsum{1-2}
+
+  \closing{Very truly yours,}   %Or other closing
+
+  % \ps PS
+  % \cc{CCs}
+  % \encl{ENCL}
+
+\end{letter}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% TeX-master: t
+%%% End:
