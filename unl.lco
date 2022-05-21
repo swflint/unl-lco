@@ -1,0 +1,82 @@
+% -*- latex -*-
+\ProvidesFile{unl.lco}[2022/05/21 Letter Class Options file for UNL Letterhead]
+
+% Written by Samuel W. Flint (swflint@flintfam.org)
+% Inspired by https://github.com/cjdet/unl-letter-template
+
+
+\LoadLetterOption{UScommercial9} % Use the basic commercial American
+                                 % letter style
+\LoadLetterOption{mlabel}       % Include commands for creating labels
+\LoadLetterOption{sections}     % Allow letter sectioning
+
+\usepackage{url}                % Add ability to have links
+\usepackage[english]{babel}     % English localized
+\usepackage[cleanlook,american]{isodate} % British style, clean dates
+
+% Configure colors
+\usepackage{xcolor}
+\definecolor{huskerred}{RGB}{208,0,0}
+
+% Handle envelope label generation \emph{correctly}
+\usepackage{filehook}
+\AtEndOfPackageFile{envlab}{\setkomafont{toname}{}\setkomafont{toaddress}{}}
+
+% Create some specialized variables that get automatically combined
+\newkomavar{signatureimage}
+\newkomavar{fromtitle}
+\newkomavar{fromoffice}
+\setkomavar{fromoffice}{set fromoffice}
+\newkomavar{fromdepartment}
+\setkomavar{fromdepartment}{set fromdepartment}
+\newkomavar{fromcity}
+\setkomavar{fromcity}{Lincoln, NE}
+\setkomavar{fromzipcode}{68588}
+
+% Produce nice headers
+\usepackage{scrlayer-scrpage}
+\KOMAoptions{pagenumber=headright}
+\pagestyle{myheadings}
+\addtokomafont{pageheadfoot}{\upshape\footnotesize}
+\markleft{\usekomavar{toname}\\\usekomavar{date}}
+
+% Define the UNL color
+\usepackage{graphicx}
+
+
+% Define the first page's header.
+\setkomavar{firsthead}{
+  \begin{textblock*}{2in}[0.530,0.912](4.885in,1.185in)
+    \includegraphics[height=0.75in]{Nebraska_N_4c}
+  \end{textblock*}
+  % \begin{center}
+  %   \includegraphics[width=0.25\linewidth]{Nebraska_N_4c}
+  % \end{center}
+}
+% \KOMAoptions{fromlogo}
+
+% Define first page footer
+
+\KOMAoptions{firstfoot}
+\usepackage[absolute]{textpos}
+\setkomavar{firstfoot}{
+  \begin{textblock*}{2in}[0.530,0.912](1.77in,10.47in)%
+    \includegraphics[width=1.2in]{UNLlogo}
+  \end{textblock*}
+  \begin{textblock*}{5in}(2.1in,10.1in)%
+    \tiny\sffamily\usekomavar{fromname}\Ifkomavar{fromtitle}{, \usekomavar{fromtitle}}{}
+    \\\vspace{.02in}
+    \textbf{\usekomavar{fromdepartment}}
+    \\\vspace{.02in}
+    \usekomavar{fromoffice} ~~\(\vert\)~~ \usekomavar{fromcity} \usekomavar{fromzipcode} ~~\(\vert\)~~ \usekomavar{fromphone} ~~\(\vert\)~~ \usekomavar{fromemail}
+    \\\vspace{.02in}
+    \usekomavar{fromurl}
+  \end{textblock*}
+}
+
+\AtBeginLetter{
+  \setkomavar{fromaddress}{\usekomavar{fromoffice}\\\usekomavar{fromdepartment}\\\usekomavar{fromcity} \usekomavar{fromzipcode}}
+  \setkomavar{backaddress}{\usekomavar{fromname}, \usekomavar{fromoffice}, \usekomavar{fromcity}, \usekomavar{fromzipcode}}
+  \setkomavar{signature}{\Ifkomavarempty{signatureimage}{}{\usekomavar{signatureimage}\\}\usekomavar{fromname}\Ifkomavar{fromtitle}{\\\usekomavar{fromtitle}}{}}
+  \Ifkomavarempty{signatureimage}{}{\setplength{sigbeforevskip}{0mm}}
+}
