@@ -14,7 +14,8 @@
 \usepackage[english]{babel}     % English localized
 \usepackage[cleanlook,american]{isodate} % British style, clean dates
 
-% Configure colors
+% Configure colors and graphics
+\usepackage{graphicx}
 \usepackage{xcolor}
 \definecolor{huskerred}{RGB}{208,0,0}
 
@@ -39,10 +40,6 @@
 \pagestyle{myheadings}
 \addtokomafont{pageheadfoot}{\upshape\footnotesize}
 \markleft{\usekomavar{toname}\\\usekomavar{date}}
-
-% Define the UNL color
-\usepackage{graphicx}
-
 
 % Define the first page's header.
 \setkomavar{firsthead}{
