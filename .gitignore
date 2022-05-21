@@ -5,6 +5,7 @@
 !.gitkeep
 !.dir-locals.el
 
+
 # Emacs Stuff
 *~
 \#*\#
@@ -67,6 +68,8 @@ flycheck_*.el
 *.ps
 *.eps
 *.pdf
+!Nebraska_N_4c.pdf
+!UNLlogo.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
