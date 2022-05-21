@@ -56,7 +56,7 @@
     \includegraphics[width=1.2in]{UNLlogo}
   \end{textblock*}
   \begin{textblock*}{5in}(2.1in,10.1in)%
-    \tiny\sffamily\usekomavar{fromname}\Ifkomavar{fromtitle}{, \usekomavar{fromtitle}}{}
+    \noindent\tiny\sffamily\usekomavar{fromname}\Ifkomavar{fromtitle}{, \usekomavar{fromtitle}}{}
     \\\vspace{.02in}
     \textbf{\usekomavar{fromdepartment}}
     \\\vspace{.02in}
