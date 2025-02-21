@@ -10,6 +10,8 @@
 \LoadLetterOption{mlabel}       % Include commands for creating labels
 \LoadLetterOption{sections}     % Allow letter sectioning
 
+\KOMAoptions{paper=letter}
+
 \usepackage{url}                % Add ability to have links
 \usepackage[english]{babel}     % English localized
 \usepackage[cleanlook,american]{isodate} % British style, clean dates
