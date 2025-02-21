@@ -62,7 +62,7 @@
     \\\vspace{.02in}
     \textbf{\usekomavar{fromdepartment}}
     \\\vspace{.02in}
-    \usekomavar{fromoffice} ~~\(\vert\)~~ \usekomavar{fromcity} \usekomavar{fromzipcode} ~~\(\vert\)~~ \usekomavar{fromphone} ~~\(\vert\)~~ \usekomavar{fromemail}
+    \usekomavar{fromoffice} ~~\(\vert\)~~ \usekomavar{fromcity} \usekomavar{fromzipcode} \Ifkomavar{fromphone}{~~\(\vert\)~~ \usekomavar{fromphone}}{} ~~\(\vert\)~~ \usekomavar{fromemail}
     \\\vspace{.02in}
     \usekomavar{fromurl}
   \end{textblock*}
